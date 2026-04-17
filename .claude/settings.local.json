@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"admin123\\\\|root.*root\\\\|localhost\" /f/myproject/easymall-java/easymall-*/src/main/resources --include=*.yml --include=*.properties)",
+      "Bash(find /f/myproject -maxdepth 3 -type d ! -path */node_modules/* ! -path */target/*)",
+      "Bash(npm list:*)",
+      "Bash(node -e \"require\\(''''docx''''\\)\")",
+      "Bash(npm install:*)",
+      "Bash(node gen_config_doc.js)",
+      "Bash(node -e \"require\\(''''/usr/local/lib/node_modules/docx''''\\)\")",
+      "Bash(npm root:*)",
+      "Bash(python \"C:\\\\Users\\\\s2032\\\\AppData\\\\Roaming\\\\Claude\\\\local-agent-mode-sessions\\\\skills-plugin\\\\3e9bb0d3-97e2-4d73-8197-15a7afee4897\\\\909176c2-ba13-4dcc-9d19-ed88f068f1b9\\\\skills\\\\docx\\\\scripts\\\\office\\\\validate.py\" \"F:/myproject/EasyMall_配置修改指南.docx\")",
+      "Bash(mkdir -p \"F:/myproject/alipay-sandbox\")",
+      "Bash(cp \"F:/myproject/appPublicCert.crt\" \"F:/myproject/alipay-sandbox/\")",
+      "Bash(cp \"F:/myproject/alipayPublicCert.crt\" \"F:/myproject/alipay-sandbox/\")",
+      "Bash(cp \"F:/myproject/alipayRootCert.crt\" \"F:/myproject/alipay-sandbox/\")",
+      "Bash(mkdir -p \"f:/webser/web_app/easymall/alipay-sandbox\")",
+      "Bash(cp \"F:/myproject/alipay-sandbox/\"*.crt \"f:/webser/web_app/easymall/alipay-sandbox/\")",
+      "Read(//f/webser/web_app/easymall/alipay-sandbox/**)",
+      "Bash(node generate_demo_doc.js)",
+      "Bash(powershell -Command \"\\(Get-Content generate_demo_doc.js -Raw -Encoding UTF8\\) -replace ''\\\\u201C'', ''['' -replace ''\\\\u201D'', '']'' | Set-Content generate_demo_doc.js -Encoding UTF8\")",
+      "Bash(npm init:*)",
+      "Bash(node generate_demo_doc_fixed.js)",
+      "Bash(node -e \":*)",
+      "Bash(node --check generate_demo_doc_fixed.js)",
+      "WebFetch(domain:localhost)",
+      "Bash(node gen_defense.js)",
+      "Bash(python C:/Users/s2032/Desktop/fix_quotes.py)",
+      "Bash(pip install:*)",
+      "Bash(python C:/Users/s2032/Desktop/gen_defense_py.py)",
+      "Bash(python -c \":*)"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+server:
+  port: 8084
+  main:
+    web-application-type: reactive
+spring:
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
+  datasource:
+    url: jdbc:mysql://localhost:3306/easymall?allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2B8&characterEncoding=utf8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  task:
+    scheduling:
+      pool:
+        size: 5
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+  ai:
+    # MCP 服务
+    mcp:
+      server:
+        protocol: STREAMABLE # STREAMABLE STATELESS
+        name: easymall-mcp  # 服务器名称
+        version: 1.0.0
+        streamable-http:
+          mcp-endpoint: /mcp  #默认是mcp
+          keep-alive-interval: 60s
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+#项目目录
+project:
+  folder: f:/webser/web_app/easymall/
+#支付宝
+alipay:
+  appid: 9021000162625707   # 沙箱 9021000162625707
+  # 应用私钥
+  # 沙箱
+  appPrivateKey: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCee6/qyAMeBnmqnk47+jrw23Hm2tEbgVJZxpzjfh6vhNDESPtxHWcRbCtLByVNATCd7osCTWti+vhlPm5h277CqzgxNoI0JPvDEFv50aa9vZC4vhwEJ9SJopammbn03lUkneOWDuL4FABPfArR207Suzk5wSEKIap+SED7uHEfGGbfmxtlSRGMdLd5GCmwJIwNoQRM18oO77tXne3NiV0BjWL9VP8ORyOZUnJDlGi3yxL3xEe19L67tq5Bb3vqiPttRytF6+1M+UyzfrEE0Ioc3B/Ds3hmyr3pnyxDtEt6UW7JDx20csXi0OtpQG7n1w8ezgrdeibPn70wQlDUKiUfAgMBAAECggEAFQ2VRvkfAOQXUYUKG4mYPtrH/MTgtmitieOKf+YHKYXZPdn8HQCs6nGWJrdiSyJ3VOOVb87dDx8L1FdAzpskcjPQmSkGjurCzxzjOwKQxe/iw8ftbNflsgr5PFR7kX3fjaezzgFYQWBW0jhGL66UgAYDChsPyorCXVg32bicvmaH3DiErOK9m83G9ZQkP7w9+oGMd87xvg3OUrzmbdeogKL7um67QAFJ/XVzhvymbjt68FmwI7zHjW0kUWJjz6/muMJ+KRhVfODOUskLAPhNDSgoWmfTgf1eEghZKOCQps86GFMGpd1hygMUe6cXiAXJJV6pqT/ZTZ00xk3rsWcWoQKBgQDUiXz+ezfS7Xlbso5qJW4WPia8EFOdh3flEAzICDuW1ACzrXjFwZVU6uQ5mNKXOaYolY+mTa+bN3chhmGdoAliKHlXSnOGR0uWRBtrHZSLG3KYD6Kz8Z/6+2XR/U4/+cqRZOL/77meqeWBfDpFEWnBjQ0/BauTCdevDKDoAtQe1wKBgQC+5G0+sFVF9M3CH7hyzGOa9NX/RaYt6UhOtNvcWp6vwzx1DGRCvxBuzI7F6nFxMd7HkrSWMQU7rnQTGJmf5C1t2Pgz+O1Mss5+SJeAp3Io1dt1odRBI+y3EY55d5JmyykJRtobRbFXduE5nw3zSbb1JNezrLavIpGV8iadPMJK+QKBgEdPfi3QX/GYliBrL5dzyZUS82IkRDnVqyejE/bFtGCt7zJaIOyRQC6GxV6B5R6yTArP66vL4wC8Qm9wLC579MoHdHcSVuKV50mavmxZN27ZHcDhdiDUEG5gjVBAolGa2RmhdPyUjX4r2QJyEQb9ibNURT6BA4lJQyHLpe1SjaNvAoGAUYHZf43tKyym+n9u012gHhbylMfZd/sGy8x/oCv1W9kCJHxBBxrr2lNvluROweVoWVCz2PlfYadQmqLDXbkhCKk++XoNYNVsRBGc1usoXHVL+oM5zQKY3WYarpS2pzuR7wsYr9JnMZBqBJ98ZmgQPcYYb/iMHGWnQh4eDL9XuokCgYA9EZARs5v2/cxzjC10uGizsilQ/yiLupU4kMIyt3oRfGc++fb6OPvppoMp9/IpSy6lbbCaktVZQ69ZZD5Cc0W8WhZbtGINBGOBB2/Yfd9YAmhhpxTRU+vLTLlGOqdUH7j3YpgJ+hQ6dSA6qvdr3KHGrPELLHOSJJtg7+fXyhOdxg==
+  appPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp7fVxa4VGgWlccQeowNbFe1whaDoagWhJAAe77Vwhp3ZSyzaqkfspTdGXNW1zWZQjz61Sv/FJhflSv6CQ5MLL6XGNPOD8cZirxdZVkCBklU3KibgvK4PAjQvyolWzf7LSQsh1adjlk5ZdJsRkSwqJwh+Ic/F+Hej+uQhlxuOelMGQGh9R5jweLLWfocMlDeb08t+nVHdVtcaqujnJbLhPBM5750aIb/GQb8BqNV2YKG1W9NzVlD02vQhMTr+979cWAp0ssZk7nvUiTU3x3WMLtPV3vCYMLC1eopgR34LveHxqCInUI2HlNgnwLNmiyjZxWU0820xqwehDZyAVuzD5wIDAQAB
+  appCertPath: alipay-sandbox/appPublicCert.crt
+  alipayPublicCertPath: alipay-sandbox/alipayPublicCert.crt
+  alipayRootCertPath: alipay-sandbox/alipayRootCert.crt
+  #沙箱 https://openapi-sandbox.dl.alipaydev.com/gateway.do  正式 https://openapi.alipay.com/gateway.do
+  serverUrl: https://openapi-sandbox.dl.alipaydev.com/gateway.do
