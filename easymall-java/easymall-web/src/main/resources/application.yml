@@ -39,7 +39,7 @@ spring:
         dimensions: 1024 #embeddinggemma:768  百炼 text-embedding-v4:1024 # 向量维度（根据使用的嵌入模型调整）
     # 使用openai 对接 阿里百炼
     openai:
-      api-key: sk-f11a58f7efea4a7988446c87657b5f8e  #阿里百炼的appkey
+      api-key: ${DASHSCOPE_API_KEY:}  # 由环境变量 DASHSCOPE_API_KEY 注入
       base-url: https://dashscope.aliyuncs.com/compatible-mode/
       chat:
         completions-path: v1/chat/completions
@@ -50,7 +50,7 @@ spring:
           model: text-embedding-v4
     dashscope:
       base-url: https://dashscope.aliyuncs.com/compatible-mode/
-      api-key: sk-f11a58f7efea4a7988446c87657b5f8e  #大模型百炼的appkey
+      api-key: ${DASHSCOPE_API_KEY:}  # 由环境变量 DASHSCOPE_API_KEY 注入
       embedding:
         model: text-embedding-v4
     # 对接本地ollama
